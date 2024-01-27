@@ -1,6 +1,9 @@
 package com.bongz.config;
 
 import com.bongz.config.converters.StringToBrowserTypeConverter;
+import com.bongz.enums.BrowserRemoteModeType;
+import com.bongz.enums.BrowserType;
+import com.bongz.enums.RunModeBrowserType;
 import org.aeonbits.owner.Config;
 
 @Config.LoadPolicy(Config.LoadType.MERGE)
@@ -13,7 +16,12 @@ public interface FrameworkConfig extends Config {
 
     @DefaultValue("CHROME")
     @ConverterClass(StringToBrowserTypeConverter.class)
-    String browser();
+    BrowserType browser();
 
+    @Key("runModeBrowser")
+    RunModeBrowserType browserRunMode();
+
+    @Key("browserRemoteMode")
+    BrowserRemoteModeType browserRemoteMode();
 
 }

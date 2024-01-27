@@ -1,4 +1,4 @@
-package enums;
+package com.bongz.enums;
 
 public enum BrowserType {
     CHROME,
