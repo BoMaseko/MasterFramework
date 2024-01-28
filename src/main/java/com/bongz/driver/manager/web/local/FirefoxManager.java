@@ -1,4 +1,4 @@
-package com.bongz.driver.manager;
+package com.bongz.driver.manager.web.local;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;

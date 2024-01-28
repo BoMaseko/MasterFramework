@@ -1,19 +1,17 @@
 package com.bongz.tests;
 
-import com.bongz.config.ConfigFactory;
-import com.bongz.config.FrameworkConfig;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.aeonbits.owner.ConfigCache;
+import com.bongz.config.BrowserStackConfig;
+import com.bongz.config.factory.BrowserStackConfigFactory;
+import com.bongz.config.factory.ConfigFactory;
+import com.bongz.driver.web.remote.BrowserStackFactory;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 public class DemoTest {
 
     @Test
     public void testLogin(){
 
-        System.out.println(ConfigFactory.getConfig().browser());
+        System.out.println(BrowserStackConfigFactory.getConfig().browserStackURL());
 
 
     }
