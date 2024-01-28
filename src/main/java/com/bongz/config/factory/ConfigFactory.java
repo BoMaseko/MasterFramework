@@ -1,5 +1,6 @@
-package com.bongz.config;
+package com.bongz.config.factory;
 
+import com.bongz.config.FrameworkConfig;
 import org.aeonbits.owner.ConfigCache;
 
 public final class ConfigFactory {

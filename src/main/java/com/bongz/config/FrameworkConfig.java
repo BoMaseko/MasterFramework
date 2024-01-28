@@ -1,10 +1,13 @@
 package com.bongz.config;
 
 import com.bongz.config.converters.StringToBrowserTypeConverter;
+import com.bongz.config.converters.StringToURLConverter;
 import com.bongz.enums.BrowserRemoteModeType;
 import com.bongz.enums.BrowserType;
 import com.bongz.enums.RunModeBrowserType;
 import org.aeonbits.owner.Config;
+
+import java.net.URL;
 
 @Config.LoadPolicy(Config.LoadType.MERGE)
 @Config.Sources({
@@ -23,5 +26,11 @@ public interface FrameworkConfig extends Config {
 
     @Key("browserRemoteMode")
     BrowserRemoteModeType browserRemoteMode();
+
+    @ConverterClass(StringToURLConverter.class)
+    URL seleniumGridURL();
+
+    @ConverterClass(StringToURLConverter.class)
+    URL selenoidURL();
 
 }
