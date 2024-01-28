@@ -1,6 +1,8 @@
 package com.bongz.config;
 
 import com.bongz.config.converters.StringToBrowserTypeConverter;
+import com.bongz.config.converters.StringToMobilePlatformTypeConverter;
+import com.bongz.config.converters.StringToMobileRemodeModeType;
 import com.bongz.config.converters.StringToURLConverter;
 import com.bongz.enums.BrowserRemoteModeType;
 import com.bongz.enums.BrowserType;
@@ -27,10 +29,21 @@ public interface FrameworkConfig extends Config {
     @Key("browserRemoteMode")
     BrowserRemoteModeType browserRemoteMode();
 
+    @Key("runModeMobile")
+    RunModeBrowserType mobileRunMode();
+
+    @Key("mobileRemoteMode")
+    @ConverterClass(StringToMobileRemodeModeType.class)
+    BrowserRemoteModeType mobileRemoteMode();
+
     @ConverterClass(StringToURLConverter.class)
     URL seleniumGridURL();
 
     @ConverterClass(StringToURLConverter.class)
     URL selenoidURL();
+
+    @ConverterClass(StringToMobilePlatformTypeConverter.class)
+    @DefaultValue("http://127.0.0.1:4723/wd/hub")
+    URL localAppiumServerURL();
 
 }
